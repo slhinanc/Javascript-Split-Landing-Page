@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Poppins';
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.side{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.side.left{
+    left: 0;
+    background: no-repeat center/cover
+    url('https://res.cloudinary.com/tf-lab/image/upload/restaurant/f39beb90-d289-434c-b032-006c47655cde/7097bd26-749d-467a-beb9-7e537367ca95.jpg'); 
+}
+
+.side.left::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.2);
+}
+
+.side.right{
+    right: 0;
+    background: no-repeat center/cover 
+    url('https://www.eatthis.com/wp-content/uploads/sites/4/2022/10/healthy-restaurant-dinner.jpg?quality=82&strip=1');
+}
+
+.side.right::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.2);  
+}
+
+h1{
+    position: absolute;
+    color: #fff;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: 3px 3px 10px rgb(0, 0, 0, 1);
+    font-size: 50px;
+}
+
+.button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: #fff;
+    background: rgb(0, 0, 0, 0.4);
+    padding: 8px 45px;
+    border-radius: 20px;
+    border: 1px solid;
+    font-size: 20px;
+}
+
+.side.left .button:hover,
+.side.right .button:hover{
+    background: rgb(0, 0, 0, 0.7);
+    border: none;
+}
+
+/* Following codes are actually not available in Html! 
+We create them in here for spreading and narrowing features so that we use them in Javascript codes. */
+
+.hover-left .left{
+    width: 75%;
+}
+
+.hover-left .right{
+    width: 25%;
+}
+
+.hover-right .right{
+    width: 75%;
+}
+
+.hover-right .left{
+    width: 25%;
+}
+
+.side.left,
+.side.right,
+.side.left::before,
+.side.right::before{
+    transition: all 1s ease-in-out;
+}
